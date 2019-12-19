@@ -1,7 +1,7 @@
 // define project name
 def dev_project_name = 'ubip-dev'
 def qa_project_name = 'ubip-qa'
-def git_branch = "${GIT_BRANCH}"
+def GIT_BRANCH
 
 // define dc patch
 def dev_dc_patch_file = 'src/main/fabric8/deployment-dev.yml'
@@ -33,7 +33,7 @@ pipeline {
     stages {
         stage('Build Package') {
             steps {
-                git branch: "${git_branch}", credentialsId: "${gitlab_credentialsId}", url: "${gitlab_url}"
+                git branch: "${GIT_BRANCH}", credentialsId: "${gitlab_credentialsId}", url: "${gitlab_url}"
                 script {
                     def pom = readMavenPom file: 'pom.xml'
                     version = pom.version
