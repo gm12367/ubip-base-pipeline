@@ -32,7 +32,7 @@ pipeline {
     stages {
         stage('Build Package') {
             steps {
-                git branch: "${GIT_BRANCH}", credentialsId: "${gitlab_credentialsId}", url: "${gitlab_url}"
+                git branch: "master", credentialsId: "${gitlab_credentialsId}", url: "${gitlab_url}"
                 script {
                     def pom = readMavenPom file: 'pom.xml'
                     version = pom.version
