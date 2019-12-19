@@ -1,7 +1,7 @@
 // define project name
 def dev_project_name = 'ubip-dev'
 def qa_project_name = 'ubip-qa'
-def git_branch = ${GIT_BRANCH}
+def git_branch = "${GIT_BRANCH}"
 
 // define dc patch
 def dev_dc_patch_file = 'src/main/fabric8/deployment-dev.yml'
